@@ -1,11 +1,13 @@
 import requests
 from dotenv import load_dotenv
 import os
+import argparse
 
+# Load environment variables
+load_dotenv()
 
 # Retrieve API key from environment variables
 api_key = os.getenv('WOLFRAM_APP_ID')
-
 
 def generate_cellular_automaton(rule_number, steps, api_key):
     """
@@ -30,12 +32,20 @@ def generate_cellular_automaton(rule_number, steps, api_key):
         # Parse the JSON response
         data = response.json()
         # Extract the cellular automaton result
-        # Note: The path to the result might vary based on the API response structure
         result = data['queryresult']['pods'][1]['subpods'][0]['plaintext']
         return result
     else:
         return "Failed to retrieve data from Wolfram API."
 
-rule_number = 30  # Example rule number
-steps = 50  # Example number of steps
-print(generate_cellular_automaton(rule_number, steps, api_key))
+if __name__ == "__main__":
+    # Create the parser
+    parser = argparse.ArgumentParser(description="Generate a cellular automaton using the Wolfram API.")
+    
+    # Add arguments
+    parser.add_argument("--rule_number", type=int, default=30, help="The rule number for the cellular automaton.")
+    parser.add_argument("--steps", type=int, default=10, help="The number of steps to generate.")
+    
+    # Parse the arguments
+    args = parser.parse_args()
+
+    print(generate_cellular_automaton(args.rule_number, args.steps, api_key))
