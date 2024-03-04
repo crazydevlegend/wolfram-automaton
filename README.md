@@ -1,0 +1,62 @@
+# Cellular Automaton Generator
+
+This repository contains a Python script for generating cellular automata using the Wolfram Alpha API. It demonstrates how to programmatically access and utilize the Wolfram Alpha API to create complex cellular automaton patterns based on specified rules and steps.
+
+## Features
+
+- **Generate Cellular Automata**: Create cellular automata patterns by specifying a rule number and the number of steps to generate.
+- **Wolfram Alpha API Integration**: Utilizes the Wolfram Alpha API to compute cellular automata, showcasing how to interact with external APIs in Python.
+- **Environment Variable Support**: Safely stores and accesses the Wolfram Alpha API key using environment variables.
+
+## Prerequisites
+
+Before you can run the script, you need to have the following:
+
+- Python 3.x installed on your system.
+- A valid Wolfram Alpha API key. You can obtain one by signing up at [Wolfram Alpha Developer](https://developer.wolframalpha.com/portal/myapps/).
+
+## Installation
+
+1. Clone this repository to your local machine using:
+```bash
+git clone https://github.com/crazydevlegend/wolfram-automaton.git
+```
+
+2. Navigate into the project directory:
+```bash
+cd wolfram-automaton
+```
+
+3. Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
+
+## Configuration
+
+1. Create a `.env` file in the root directory of the project.
+2. Add your Wolfram Alpha API key to the `.env` file as follows:
+
+```plaintext
+WOLFRAM_APP_ID=your-api-key
+```
+
+   Replace `your-api-key` with your actual API key.
+
+## Usage
+
+To generate a cellular automaton, run the `main.py` script with Python:
+```bash
+python main.py
+```
+
+By default, the script is set to generate a cellular automaton using Rule 30 with 50 steps. You can modify the `rule_number` and `steps` variables in `main.py` to generate different patterns.
+
+## Contributing
+
+Contributions to this project are welcome! Please fork the repository and submit a pull request with your improvements.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
