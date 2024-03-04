@@ -7,6 +7,7 @@ This repository contains a Python script for generating cellular automata using 
 - **Generate Cellular Automata**: Create cellular automata patterns by specifying a rule number and the number of steps to generate.
 - **Wolfram Alpha API Integration**: Utilizes the Wolfram Alpha API to compute cellular automata, showcasing how to interact with external APIs in Python.
 - **Environment Variable Support**: Safely stores and accesses the Wolfram Alpha API key using environment variables.
+- **Command Line Arguments**: Allows users to specify the rule number and the number of steps for the automaton generation through command line arguments.
 
 ## Prerequisites
 
@@ -48,10 +49,12 @@ WOLFRAM_APP_ID=your-api-key
 
 To generate a cellular automaton, run the `main.py` script with Python:
 ```bash
-python main.py
+python main.py --rule_number <rule_number> --steps <steps>
 ```
+- `--rule_number`: The rule number for the cellular automaton (e.g., 30).
+- `--steps`: The number of steps to generate for the automaton (e.g., 50).
 
-By default, the script is set to generate a cellular automaton using Rule 30 with 50 steps. You can modify the `rule_number` and `steps` variables in `main.py` to generate different patterns.
+By default, if no arguments are provided, the script generates a cellular automaton using Rule 30 with 50 steps.
 
 ## Contributing
 
